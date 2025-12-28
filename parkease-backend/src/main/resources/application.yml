@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: parkease-backend
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parkease
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+
+jwt:
+  secret: parkease-secret-key-change-in-production-minimum-256-bits
+  expiration: 604800000 # 7 days in milliseconds
+
+google:
+  cloud:
+    storage:
+      bucket-name: parkease-spots
+      credentials-path: # Path to GCS credentials JSON file (optional, can use service account from GCP)
+
+logging:
+  level:
+    com.parkease: DEBUG
+    org.springframework.security: DEBUG
+

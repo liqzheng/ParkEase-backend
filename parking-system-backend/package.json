@@ -1,0 +1,31 @@
+{
+  "name": "parking-system-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Parking System Management Backend - Node.js + Express + MongoDB",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App.js",
+    "dev": "nodemon App.js",
+    "init-data": "node data/initData.js"
+  },
+  "keywords": [
+    "parking",
+    "management",
+    "system"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.3",
+    "dotenv": "^16.0.3",
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
+
