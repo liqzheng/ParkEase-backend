@@ -19,7 +19,7 @@ public interface ParkingSpotRepository extends JpaRepository<ParkingSpot, Long> 
     List<ParkingSpot> findByCityIgnoreCaseAndIsAvailableTrue(String city);
     
     @Query("SELECT p FROM ParkingSpot p WHERE " +
-           "(:city IS NULL OR LOWER(p.city) = LOWER(:city)) AND " +
+           "(:city IS NULL OR LOWER(CAST(p.city AS TEXT)) = LOWER(:city)) AND " +
            "(:spotType IS NULL OR p.spotType = :spotType) AND " +
            "(:priceMin IS NULL OR p.pricePerHour >= :priceMin) AND " +
            "(:priceMax IS NULL OR p.pricePerHour <= :priceMax) AND " +

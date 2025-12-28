@@ -35,7 +35,7 @@ public class ParkingSpot {
     @Column(nullable = false)
     private String address;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255)")
     private String city;
 
     private String state;
