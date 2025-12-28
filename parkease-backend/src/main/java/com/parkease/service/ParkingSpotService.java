@@ -39,8 +39,8 @@ public class ParkingSpotService {
     private ReservationRepository reservationRepository;
     
     public List<ParkingSpotResponse> searchSpots(String city, String spotType, BigDecimal priceMin, BigDecimal priceMax, String date) {
-        com.parkease.enums.SpotType type = spotType != null ? com.parkease.enums.SpotType.valueOf(spotType.toUpperCase()) : null;
-        List<ParkingSpot> spots = parkingSpotRepository.searchSpots(city, type, priceMin, priceMax);
+        String typeStr = spotType != null ? spotType.toUpperCase() : null;
+        List<ParkingSpot> spots = parkingSpotRepository.searchSpots(city, typeStr, priceMin, priceMax);
         
         // Filter by date if provided
         if (date != null && !date.isEmpty()) {
