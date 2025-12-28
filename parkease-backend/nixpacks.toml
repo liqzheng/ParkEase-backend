@@ -5,5 +5,5 @@ nixPkgs = ["maven", "jdk17"]
 cmds = ["mvn clean package -DskipTests"]
 
 [start]
-cmd = "sh -c 'java -jar target/parkease-backend-1.0.0.jar'"
+cmd = "java -jar app.jar"
 
